@@ -177,6 +177,11 @@ const SignatureView = forwardRef(({
       if (webViewRef.current) {
         webViewRef.current.injectJavaScript("getData();true;");
       }
+    },
+    setAndroidLayerType: (layerType: 'none'|'hardware') => {
+      if (webViewRef.current && layerType === 'none' || layerType=== 'hardware') {
+        webViewRef.current.androidLayerType = layerType;
+      }
     }
   }), [webViewRef]);
 
